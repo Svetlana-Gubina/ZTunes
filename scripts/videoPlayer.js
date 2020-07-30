@@ -1,3 +1,5 @@
+export const addZero = n => n < 10 ? '0' + n : n;
+
 const videoPlayerInit = () => {
   const videoPlayer = document.querySelector('.video-player');
   const play = document.querySelector('.video-button__play');
@@ -28,8 +30,6 @@ const videoPlayerInit = () => {
     videoPlayer.pause();
     videoPlayer.currentTime = 0;
   };
-
-  const addZero = n => n < 10 ? '0' + n : n;
 
   videoPlayer.addEventListener('click', togglePlay);
   play.addEventListener('click', togglePlay);
