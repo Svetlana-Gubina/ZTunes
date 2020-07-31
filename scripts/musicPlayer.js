@@ -64,6 +64,7 @@ const musicPlayerInit = () => {
 
   audioPlayer.addEventListener('ended', () => {
     getNextTrack();
+    loadTrack();
     audioPlayer.play();
   });
 
@@ -90,6 +91,16 @@ const musicPlayerInit = () => {
     const progress = (x / progressWidth) * audioPlayer.duration;
     audioPlayer.currentTime = progress;
   });
+
+  musicPlayerInit.stop = () =>  {
+    if(!audioPlayer.paused) {
+      audioPlayer.pause();
+      audio.classList.remove('play');
+      audioBtnPlay.classList.remove('fa-play');
+      audioBtnPlay.classList.add('fa-pause');
+    }
+  };
+
 };
 
 export default musicPlayerInit;

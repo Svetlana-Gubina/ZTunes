@@ -57,6 +57,13 @@ const radioPlayerInit = () => {
   });
 
   radioStop.addEventListener('click', toggleStop);
+
+  radioPlayerInit.stop = () =>  {
+    if(!audio.paused) {
+      audio.pause();
+    }
+    changeIconPlay();
+  };
 };
 
 export default radioPlayerInit;
